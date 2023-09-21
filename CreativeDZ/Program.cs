@@ -92,11 +92,11 @@ namespace CreativeDZ
             Console.WriteLine("Консоль - Нет");
             System.Threading.Thread.Sleep(5000);
             Console.WriteLine("Консоль - Но могу показать");
-            Console.BackgroundColor = ConsoleColor.DarkMagenta;
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Random random = new Random();
+            int color = random.Next(0, 16);
+            Console.BackgroundColor = (ConsoleColor)color;
             Console.WriteLine("╰(*°▽°*)╯Магия╰(*°▽°*)╯");
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Нажмите enter");
             Console.ReadKey();
             Console.WriteLine("Задание 7: Вычислить контрольную сумму штрихкода");
@@ -129,7 +129,6 @@ namespace CreativeDZ
             checkdigit1 %= 10;
             Console.WriteLine("Контрольная цифра: {0} ", checkdigit1);
             Console.WriteLine("Используем случайные цифры: ");
-            Random random = new Random();
             int[] digitsRand = new int[12];
             for (int i = 0; i <12; i++)
             {
@@ -221,6 +220,7 @@ namespace CreativeDZ
             public int Age;
             public int pincode;
         }
+        
         public struct Student
         {
             public string Surname { get; set; }
